@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio académico personal - actividades, proyectos y evidencias por unidades y semanas.">
+  <title>Mi Portafolio | Ingeniería de Sistemas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bg-orb orb-one"></div><div class="bg-orb orb-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio"><span class="brand-mark">D</span><span>Mi<span>Portafolio</span></span></a>
+    <nav id="nav">
+      <a href="#inicio">Inicio</a><a href="#sobre-mi">Sobre mí</a><a href="#unidades">Unidades</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a>
+    </nav>
+    <div class="top-actions"><button id="themeBtn" class="icon-btn" title="Cambiar tema">☾</button><button id="menuBtn" class="icon-btn mobile-only">☰</button></div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> PORTAFOLIO ACADÉMICO · 2026</div>
+        <h1>Aprender.<br><span>Crear.</span> Evolucionar.</h1>
+        <p class="hero-text">Un espacio donde organizo mis tareas, prácticas, proyectos y aprendizajes de cada semana de una forma clara, moderna y fácil de explorar.</p>
+        <div class="hero-actions"><a class="btn primary" href="#unidades">Explorar mi trabajo <span>→</span></a><a class="btn ghost" href="#sobre-mi">Conóceme</a></div>
+        <div class="mini-stats"><div><strong>4</strong><span>Unidades</span></div><div><strong>16</strong><span>Semanas</span></div><div><strong>32</strong><span>Actividades</span></div></div>
+      </div>
+      <div class="hero-card">
+        <div class="code-window"><div class="window-bar"><i></i><i></i><i></i><span>portfolio.js</span></div>
+          <pre><code><span class="pink">const</span> estudiante = {
+  nombre: <span class="green">"David"</span>,
+  carrera: <span class="green">"Ing. de Sistemas"</span>,
+  enfoque: [<span class="green">"Web"</span>, <span class="green">"BD"</span>, <span class="green">"Redes"</span>],
+  objetivo: <span class="green">"Seguir creciendo"</span>
+};
+
+<span class="blue">console</span>.log(estudiante);</code></pre>
+        </div>
+        <div class="floating-card"><span class="spark">✦</span><div><b>Progreso académico</b><small id="progressText">0% completado</small></div><strong id="progressValue">0%</strong></div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="section">
+      <div class="section-head"><div><span class="eyebrow">01 · PERFIL</span><h2>Sobre mí</h2></div><p>Presenta tu historia, tus intereses y aquello que te motiva a seguir aprendiendo.</p></div>
+      <div class="about-grid">
+        <article class="glass about-main"><div class="avatar">D</div><div><h3>Hola, soy David 👋</h3><p>Soy estudiante de Ingeniería de Sistemas. Me interesa aprender tecnología mediante proyectos reales, experimentar con desarrollo web, bases de datos, programación y redes.</p><p>Este portafolio reúne mi proceso: no solo los resultados, sino también las prácticas y evidencias que muestran cómo voy mejorando.</p></div></article>
+        <div class="skill-list glass"><h3>Mis áreas</h3><div class="skill"><span>Desarrollo Web</span><b>85%</b><div><i style="width:85%"></i></div></div><div class="skill"><span>Bases de Datos</span><b>80%</b><div><i style="width:80%"></i></div></div><div class="skill"><span>Programación</span><b>78%</b><div><i style="width:78%"></i></div></div><div class="skill"><span>Redes</span><b>72%</b><div><i style="width:72%"></i></div></div></div>
+      </div>
+    </section>
+
+    <section id="unidades" class="section">
+      <div class="section-head"><div><span class="eyebrow">02 · CURSO</span><h2>Unidades y semanas</h2></div><p>Selecciona una unidad y encuentra las 4 semanas con sus 2 actividades correspondientes.</p></div>
+      <div class="unit-tabs" id="unitTabs"></div>
+      <div class="toolbar"><div class="search"><span>⌕</span><input id="searchInput" placeholder="Buscar actividad, semana o palabra clave..."></div><select id="statusFilter"><option value="all">Todas</option><option value="done">Completadas</option><option value="pending">Pendientes</option></select></div>
+      <div id="weeksGrid" class="weeks-grid"></div>
+    </section>
+
+    <section id="proyectos" class="section">
+      <div class="section-head"><div><span class="eyebrow">03 · DESTACADOS</span><h2>Proyectos</h2></div><p>Agrega aquí tus mejores trabajos para que tu portafolio también funcione como presentación personal.</p></div>
+      <div class="projects-grid">
+        <article class="project glass"><div class="project-icon">⌘</div><span class="tag">WEB</span><h3>Portafolio personal</h3><p>Diseño responsive para presentar actividades, evidencias y proyectos académicos.</p><div class="project-foot"><span>HTML · CSS · JS</span><a href="#unidades">Ver trabajo →</a></div></article>
+        <article class="project glass"><div class="project-icon">▦</div><span class="tag">BD</span><h3>Sistema de gestión</h3><p>Modelo de datos y consultas para organizar información de un sistema.</p><div class="project-foot"><span>SQL · ER</span><a href="#unidades">Ver trabajo →</a></div></article>
+        <article class="project glass"><div class="project-icon">⌁</div><span class="tag">REDES</span><h3>Conectividad</h3><p>Prácticas de configuración, direccionamiento y comunicación entre dispositivos.</p><div class="project-foot"><span>IP · Wi‑Fi · LAN</span><a href="#unidades">Ver trabajo →</a></div></article>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact-section">
+      <div class="contact-card"><div><span class="eyebrow">04 · CONTACTO</span><h2>¿Quieres conocer mi trabajo?</h2><p>Completa tus datos de contacto o reemplaza estos botones por tus enlaces reales de GitHub y LinkedIn.</p></div><div class="contact-links"><a class="btn primary" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a><a class="btn ghost" href="mailto:tu-correo@ejemplo.com">Correo ↗</a></div></div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">D</span><span>Mi<span>Portafolio</span></span></div><p>Hecho con dedicación · Portafolio académico personal</p><small>© 2026 · Todos los derechos reservados</small></footer>
+
+  <div id="taskModal" class="modal"><div class="modal-box"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+  <div id="toast" class="toast"></div>
+
+  <button id="chatToggle" class="chat-toggle" aria-label="Abrir asistente">✦</button>
+  <aside id="chatPanel" class="chat-panel"><div class="chat-head"><div><b>Asistente del portafolio</b><small>Pregúntame por tus actividades</small></div><button id="chatClose">×</button></div><div id="chatMessages" class="chat-messages"><div class="bot msg">¡Hola! 👋 Soy tu asistente. Puedes preguntarme qué hay en una unidad, una semana o qué actividades están pendientes.</div></div><form id="chatForm"><input id="chatInput" placeholder="Escribe una pregunta..." autocomplete="off"><button>➤</button></form></aside>
+
+  <script src="js/data.js"></script><script src="js/chatbot.js"></script><script src="js/main.js"></script>
+</body>
+</html>
