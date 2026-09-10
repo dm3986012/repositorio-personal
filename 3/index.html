@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Personal — Base de Datos II</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Special+Elite&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Pantalla de acceso -->
+  <div id="loginScreen" class="login">
+    <div class="login__card">
+      <span class="login__seal">B·D·II</span>
+      <h1 class="login__title">Archivo de David</h1>
+      <p class="login__sub">Portafolio personal &middot; Base de Datos II</p>
+
+      <form id="loginForm" class="login__form" onsubmit="return ingresarAlPortafolio(event);">
+        <label class="login__label">
+          Usuario
+          <input id="loginUser" class="login__input" type="text" autocomplete="username" placeholder="david" required>
+        </label>
+        <label class="login__label">
+          Contraseña
+          <input id="loginPass" class="login__input" type="password" autocomplete="current-password" placeholder="123" required>
+        </label>
+
+        <p id="loginError" class="login__error" hidden>Usuario o contraseña incorrectos.</p>
+
+        <button type="submit" class="login__button" onclick="return ingresarAlPortafolio(event);">Ingresar al archivo</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="appRoot" hidden>
+    <div class="app">
+
+      <!-- Barra lateral: como el frente de un fichero de biblioteca -->
+      <aside class="sidebar">
+        <div class="sidebar__brand">
+          <span class="brand__seal">B·D·II</span>
+          <div>
+            <p class="brand__title">Portafolio personal</p>
+            <p class="brand__sub">Base de Datos II</p>
+          </div>
+        </div>
+
+        <button type="button" id="btnInicio" class="tree__inicio">☙ Portada</button>
+
+        <nav id="tree" class="tree"></nav>
+
+        <div class="sidebar__footer">
+          <svg class="footer__compass" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1"/>
+            <path d="M20 5 L23 20 L20 35 L17 20 Z" fill="currentColor" opacity="0.8"/>
+            <path d="M5 20 L20 17 L35 20 L20 23 Z" fill="currentColor" opacity="0.4"/>
+            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+          </svg>
+          <p>Hecho a mano<br>con HTML · CSS · JS</p>
+        </div>
+        <button type="button" id="btnSalir" class="sidebar__logout">Cerrar sesión</button>
+      </aside>
+
+      <!-- Panel de contenido: la "página" del cuaderno -->
+      <main class="content">
+        <div id="view"></div>
+      </main>
+
+    </div>
+
+    <!-- Chatbot flotante -->
+    <div id="chatbot" class="chatbot">
+      <button id="chatbotToggle" class="chatbot__toggle" type="button" aria-label="Abrir asistente">
+        <span class="chatbot__toggle-icon">🗂</span>
+      </button>
+
+      <div id="chatbotPanel" class="chatbot__panel" hidden>
+        <div class="chatbot__header">
+          <span class="chatbot__avatar">🗂</span>
+          <div>
+            <p class="chatbot__title">El Archivero</p>
+            <p class="chatbot__status">a su servicio</p>
+          </div>
+          <button id="chatbotClose" class="chatbot__close" type="button" aria-label="Cerrar">✕</button>
+        </div>
+
+        <div id="chatbotMessages" class="chatbot__messages"></div>
+
+        <form id="chatbotForm" class="chatbot__form">
+          <input id="chatbotInput" class="chatbot__input" type="text" placeholder="Escriba su pregunta..." autocomplete="off">
+          <button class="chatbot__send" type="submit" aria-label="Enviar">✎</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/auth.js?v=20260909b"></script>
+</body>
+</html>
