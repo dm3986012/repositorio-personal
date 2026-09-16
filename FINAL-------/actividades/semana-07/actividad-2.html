@@ -1,0 +1,31 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Semana 07 · Actividad 2</title><style>body{margin:0;background:#050b19;color:#edf7ff;font-family:Segoe UI,Arial,sans-serif;padding:32px}.card{max-width:900px;margin:auto;background:#0a1730;border:1px solid #1edcff66;border-radius:24px;padding:34px;box-shadow:0 0 40px #00d9ff12}h1{font-size:34px;margin:0 0 8px}h2{color:#45e5ff}.tag{display:inline-block;padding:7px 12px;border-radius:99px;background:#325eea;color:white}p,li{color:#b9cbe3;line-height:1.8}.box{padding:18px;border-radius:16px;background:#071126;border:1px solid #8a5cff55;margin-top:22px}.edit{color:#ffbf52}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.gallery figure{margin:0;background:#050f22;border:1px solid #24558f66;border-radius:14px;overflow:hidden}.gallery img{display:block;width:100%;height:auto;object-fit:cover}.gallery figcaption{padding:8px 12px;font-size:12px;color:#9bb0cc}#noImgMsg{color:#6f88ac;font-size:13px;margin-top:16px}@media(max-width:600px){.gallery{grid-template-columns:1fr}}</style></head><body><main class="card"><span class="tag">Semana 07 · Actividad 2</span><h1>Pruebas iniciales</h1><p><b>Unidad 2 · Desarrollo</b></p><p>Análisis, diseño e implementación</p><div class="box"><h2>📘 Evidencia académica</h2><p id="noImgMsg">Aún no se han cargado imágenes para esta actividad. En cuanto agregues fotos a la carpeta <b>img2/</b> (dentro de esta misma carpeta de semana) con nombres evidencia-1.png, evidencia-2.png, evidencia-3...., apareceran aquí automáticamente.</p><div class="gallery" id="autoGallery" style="display:none"></div></div></main>
+<script>
+(function(){
+  var exts=['png','jpg','jpeg','webp','PNG','JPG','JPEG'];
+  var maxNum=20;
+  var gallery=document.getElementById('autoGallery');
+  var msg=document.getElementById('noImgMsg');
+  var found=false;
+  function showFound(src,num){
+    if(!found){found=true;msg.style.display='none';gallery.style.display='grid';}
+    var fig=document.createElement('figure');
+    var im=document.createElement('img');
+    im.src=src;im.alt='Evidencia '+num;
+    var cap=document.createElement('figcaption');
+    cap.textContent='Evidencia '+num;
+    fig.appendChild(im);fig.appendChild(cap);
+    gallery.appendChild(fig);
+  }
+  function tryNum(num,extIdx){
+    if(num>maxNum)return;
+    if(extIdx>=exts.length){tryNum(num+1,0);return;}
+    var src='img2/evidencia-'+num+'.'+exts[extIdx];
+    var img=new Image();
+    img.onload=function(){showFound(src,num);tryNum(num+1,0);};
+    img.onerror=function(){tryNum(num,extIdx+1);};
+    img.src=src;
+  }
+  tryNum(1,0);
+})();
+</script>
+</body></html>
